@@ -13,7 +13,7 @@ const urlSchema = new mongoose.Schema({
     visitHistory: [
         {
             timestamp: { type: Number },
-            ip: { type: String }
+            // ip: { type: String }
         }
     ]
 }, {timestamps: true}); //created-at and updated-at, managed by mogoose
