@@ -22,5 +22,27 @@
             <button type="submit">shorten</button>
         </form>
     </div>
+    <div>
+        <table>
+            <thead>
+                <th>s.no.</th>
+                <th>short-id</th>
+                <th>redirect-url</th>
+                <th>clicks</th>
+            </thead>
+            <tbody>
+                <% if (locals.urls && urls.length > 0) { %>
+                    <% urls.forEach((url, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><a href="/url/<%= url.shortId %>">http://localhost:8001/url/<%= url.shortId %></a></td>
+                            <td><a href="<%= url.redirectUrl %>"><%= url.redirectUrl %></a></td>
+                            <td><%= url.visitHistory.length %></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
