@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>url shortener</h1>
+    <% if (locals.shortId) { %>
+        <p>url generated: http://localhost:8001/url/<%= shortId %></p>
+    <% } %>
+    <div>
+        <form method="post" action="/url">
+            <label for="url">enter your original url:</label>
+            <input type="text" name="url" placeholder="https://example.com">
+            <button type="submit">shorten</button>
+        </form>
+    </div>
+</body>
+</html>

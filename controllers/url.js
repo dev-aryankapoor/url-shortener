@@ -4,7 +4,8 @@ import { nanoid } from 'nanoid';
 
 export async function handleGetNewShortURL(req,res) {
     const body = req.body;
-    if(!body.url) return res.status(400).json({error: "URL is required"});
+    if(!body.url) return res.status(400).render('home');
+    // if(!body.url) return res.status(400).json({error: "URL is required"});
     const shortId = nanoid(8);
 
     await Url.create({
@@ -13,7 +14,9 @@ export async function handleGetNewShortURL(req,res) {
         visitHistory: []
     });
 
-    return res.status(200).json({shortId: shortId});
+    return res.status(200).render('home', {
+        shortId
+    });
 };
 
 export async function handleRedirectURL(req,res) {
