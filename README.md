@@ -39,7 +39,7 @@ It also tracks the number of clicks on each shortened link.</p>
 <li class="has-line-data" data-line-start="37" data-line-end="39"><a href="https://nodemon.io/">nodemon</a> - for live reloading during development</li>
 </ul>
 <h2 class="code-line" data-line-start=39 data-line-end=40 ><a id="Screenshots_39"></a>Screenshots</h2>
-<p class="has-line-data" data-line-start="41" data-line-end="42"><em>Add some screenshots here showcasing the app interface, shortened URL, and analytics!</em></p>
+<p class="has-line-data" data-line-start="41" data-line-end="42"><em>This is the app interface, shortened URL, and analytics.</em></p>
 <p class="has-line-data" data-line-start="43" data-line-end="45"><img src="./images/demo.png" alt="Homepage Screenshot"></p>
 <h2 class="code-line" data-line-start=46 data-line-end=47 ><a id="Installation_46"></a>Installation</h2>
 <p class="has-line-data" data-line-start="48" data-line-end="49">URL Shortener requires <a href="https://nodejs.org/">Node.js</a> and <a href="https://www.mongodb.com/">MongoDB</a> installed.</p>
