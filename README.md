@@ -88,19 +88,9 @@ PORT=your_desired_port
 <td>Get the link analytics</td>
 </tr>
 <tr>
-<td>OneDrive</td>
-<td>[plugins/onedrive/README.md][PlOd]</td>
-<td></td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>[plugins/medium/README.md][PlMe]</td>
-<td></td>
-</tr>
-<tr>
-<td>Google Analytics</td>
-<td>[plugins/googleanalytics/README.md][PlGa]</td>
-<td></td>
+<td>GET</td>
+<td>/</td>
+<td>Home page</td>
 </tr>
 </tbody>
 </table>
