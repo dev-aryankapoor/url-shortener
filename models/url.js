@@ -15,7 +15,11 @@ const urlSchema = new mongoose.Schema({
             timestamp: { type: Number },
             // ip: { type: String }
         }
-    ]
+    ],
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users"
+    },
 }, {timestamps: true}); //created-at and updated-at, managed by mogoose
 
 const Url = mongoose.model("Url", urlSchema); //Mongoose will use the "Url" model to interact with the "urls" collection in MongoDB

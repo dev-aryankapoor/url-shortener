@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>SignUp</h1>
+    <form action="/user" method="post">
+        <label for="name">enter your name: </label>
+        <input type="text" name="name" placeholder="joe doe" required><br>
+        <label for="email">enter your email: </label>
+        <input type="text" name="email" placeholder="joe.doe@xyz.com" required><br>
+        <label for="password">enter your password: </label>
+        <input type="password" name="password"  id="password" placeholder="********" maxlength="8" required><br>
+        <input type="checkbox" onclick="showPassword()">Show Password <br>
+        <button type="submit">SignUp</button>
+    </form>
+    <script>
+        function showPassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
