@@ -74,18 +74,18 @@ PORT=your_desired_port
 <tbody>
 <tr>
 <td>POST</td>
-<td></td>
+<td>/url/</td>
 <td>Create a new short URL</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>[plugins/github/README.md][PlGh]</td>
-<td></td>
+<td>/url/:shortId</td>
+<td>Get the redirect URL</td>
 </tr>
 <tr>
-<td>Google Drive</td>
-<td>[plugins/googledrive/README.md][PlGd]</td>
-<td></td>
+<td>GET</td>
+<td>/url/analytics/:shortId</td>
+<td>Get the link analytics</td>
 </tr>
 <tr>
 <td>OneDrive</td>
