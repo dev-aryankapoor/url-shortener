@@ -40,8 +40,7 @@ It also tracks the number of clicks on each shortened link.</p>
 </ul>
 <h2 class="code-line" data-line-start=39 data-line-end=40 ><a id="Screenshots_39"></a>Screenshots</h2>
 <p class="has-line-data" data-line-start="41" data-line-end="42"><em>Add some screenshots here showcasing the app interface, shortened URL, and analytics!</em></p>
-<p class="has-line-data" data-line-start="43" data-line-end="45"><img src="YOUR_IMAGE_LINK_HERE" alt="Homepage Screenshot"><br>
-<img src="YOUR_IMAGE_LINK_HERE" alt="Analytics Screenshot"></p>
+<p class="has-line-data" data-line-start="43" data-line-end="45"><img src="./images/demo.png" alt="Homepage Screenshot"></p>
 <h2 class="code-line" data-line-start=46 data-line-end=47 ><a id="Installation_46"></a>Installation</h2>
 <p class="has-line-data" data-line-start="48" data-line-end="49">URL Shortener requires <a href="https://nodejs.org/">Node.js</a> and <a href="https://www.mongodb.com/">MongoDB</a> installed.</p>
 <p class="has-line-data" data-line-start="50" data-line-end="51">Clone the repository and install the dependencies.</p>
