@@ -1,8 +1,14 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import mongoose from "mongoose";
+import 'dotenv/config';
 
-export const PORT = process.env.PORT || 8001;
-export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/shorturl';
+const url = process.env.MONGODB_URI;
 
+const connectDB = () => {
+    mongoose.connection.on('connected', () => {
+        console.log("database connected");
+    });
 
+    mongoose.connect(url);
+};
 
+export default connectDB;

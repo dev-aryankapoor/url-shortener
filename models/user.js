@@ -13,8 +13,28 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    verifyOtp: {
+        type: String,
+        default:""
+    },
+    verifyOtpExpireAt: {
+        type: Number,
+        default: 0
+    },
+    resetOtp: {
+        type: String,
+        default:""
+    },
+    resetOtpExpireAt: {
+        type: Number,
+        default: 0
+    },
+    isAccountVerified: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
 
-const User = mongoose.model('User', userSchema);
-export default User;
+const userModel = mongoose.models.user || mongoose.model('user', userSchema);
+export default userModel;
