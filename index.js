@@ -23,9 +23,10 @@ app.use(cookieParser());
 
 connectDB();
 
-app.set('view engine', 'ejs');
-app.set('views', path.resolve('./views'));
-
+//NEED TO REMOVE
+// app.set('view engine', 'ejs');
+// app.set('views', path.resolve('./views'));
+//
 
 app.use('/', staticRouter);
 app.use('/url', restrictToLoggedinUsersOnly, urlRoute); //inline middleware
