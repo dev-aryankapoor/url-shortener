@@ -1,14 +1,27 @@
-import { getUserBySessionId } from '../services/auth.js';
+import jwt from "jsonwebtoken";
+import User from '../models/user.js';
 
 export async function restrictToLoggedinUsersOnly(req, res, next){
-    const userUid = req.cookies?.uid;
-    if (!userUid) {
-        return res.redirect('/login', { error: 'You must be logged in to access this page' });
+    const token = req.cookies?.token;
+    if (!token) {
+        return res.status(401).json({
+            success: false,
+            message: "unauthorized access"
+        });
     }
-    const user = await getUserBySessionId(userUid);
-    if (!user) {
-        return res.redirect('/login', { error: 'You must be logged in to access this page' });
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.userId);
+
+        if (!user) {
+            return res.status(401).json({ message: "login required" });
+        }
+
+        req.user = user;
+        next();
+
+    } catch (error) {
+        return res.status(401).json({ message: "invalid token" });
     }
-    req.user = user;
-    next();
 }

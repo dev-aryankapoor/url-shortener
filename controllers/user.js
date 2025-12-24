@@ -1,6 +1,7 @@
 import User from '../models/user.js';
 import { v4 as uuidv4 } from 'uuid';
 import { setUserBySessionId, getUserBySessionId } from '../services/auth.js';
+import jwt from "jsonwebtoken";
 
 export async function handleUserSignup(req, res){
     const { name, email, password } = req.body;
@@ -10,12 +11,36 @@ export async function handleUserSignup(req, res){
 
 export async function handleUserLogin(req, res){
     const { email, password } = req.body;
-    const user = await User.findOne({ email, password });
+
+    const user = await User.findOne({ email });
     if (!user) {
-        return res.status(401).render('login', { error: 'Invalid email or password' });
+        return res.status(401).json({
+            success: false,
+            message: 'invalid email'
+        });
     }
-    const sessionId = uuidv4();
-    setUserBySessionId(sessionId, user);
-    res.cookie('uid', sessionId);
-    return res.redirect('/');
+    
+    const isPassValid = await user.comparePassword(password);
+    if (!isPassValid) {
+        return res.status(401).json({
+            success: false,
+            message: 'invalid password'
+        });
+    }
+
+    const token = jwt.sign(
+        {userId: user._id},
+        process.env.JWT_SECRET,
+        { expiresIn: "7d"
+        })
+    res.cookie('token', token, {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: false
+    });
+
+    return res.json({
+        success: true,
+        message: "user logged in successfully"
+    });
 }
