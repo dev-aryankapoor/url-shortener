@@ -15,9 +15,7 @@ export async function handleGetNewShortURL(req,res) {
 
     const allUrls = await Url.find({});
 
-    return res.status(200).render('home', {
-        urls: allUrls
-    });
+    return res.status(200).json({message:"short URL created"});
 };
 
 export async function handleRedirectURL(req,res) {

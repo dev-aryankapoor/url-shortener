@@ -28,7 +28,7 @@ connectDB();
 // app.set('views', path.resolve('./views'));
 //
 
-app.use('/', staticRouter);
+// app.use('/', staticRouter);
 app.use('/url', restrictToLoggedinUsersOnly, urlRoute); //inline middleware
 app.use('/user', userRoute);
 

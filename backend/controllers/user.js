@@ -1,12 +1,14 @@
 import User from '../models/user.js';
 import { v4 as uuidv4 } from 'uuid';
-import { setUserBySessionId, getUserBySessionId } from '../services/auth.js';
 import jwt from "jsonwebtoken";
 
 export async function handleUserSignup(req, res){
     const { name, email, password } = req.body;
     await User.create({ name, email, password });
-    return res.redirect('/');
+    return res.status(201).json({
+        success: true,
+        message: 'user created successfully'
+    });
 }
 
 export async function handleUserLogin(req, res){

@@ -7,12 +7,12 @@ const DarkMode = () => {
   return (
     <div>
         <Button 
-          variant="outline" 
+          variant="ghost" 
           size="icon"
           onClick={ () => setTheme(theme === "dark" ? "light" : "dark")}
-          className="px-4 py-2 bg-neutral-800 text-neutral-200 dark:bg-neutral-400 dark:text-neutral-800 rounded-2xl cursor-pointer hover:bg-neutral-600"
+          className="theme-switch-button"
           >
-            {theme === "dark" ? <Sun /> : <Moon />}
+            S
           </Button>
     </div>
   )
